@@ -1,0 +1,128 @@
+body
+	font-family: 'Noto Sans KR', sans-serif
+	user-select: none
+
+.game
+	width: 600px
+	height: 200px
+	border-bottom: 1px solid black
+	margin: auto
+
+	position: relative
+
+.restart
+	cursor: pointer
+
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+	position: absolute
+	top: -50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+	transition: top 0.3s
+
+	&__text
+		text-align: center
+		margin-bottom: 10px
+
+	&__button
+		width: 130px
+		height: 45px
+		background-image: url(img/charite.jpg)
+		background-size: 100%
+		background-repeat: no-repeat
+		border: 1px solid black
+
+		transition: box-shadow
+
+		&:hover
+			box-shadow: 0px 0px 10px grey
+
+.dif
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+	transition: top 0.3s 0.3s
+
+	&__text
+		font-size: 18px
+		margin: 5px 0
+
+	&__lvl
+		margin: 5px 0
+		opacity: 0.5
+
+		position: relative
+		left: 0
+
+		font-weight: 600
+		cursor: pointer
+
+		transition: left 0.1s, font-weight 0.1s
+
+		&:hover
+			opacity: 1
+			font-weight: 600
+			left: 10px
+
+#hero
+	width: 50px
+	height: 85px
+	background-repeat: no-repeat
+	background-size: 100%
+
+	position: absolute
+	top: 115px
+	left: 50px
+
+.run
+	background-image: url(img/nav-run.png)
+.jump
+	animation: jump 0.3s linear
+	background-image: url(img/nav-jump.png)
+.dead
+	background-image: url(img/nav-jump.png)
+
+@keyframes jump
+	0%
+		top: 115px
+	30%
+		top: 95px
+	50%
+		top: 45px
+	80%
+		top: 95px
+	100%
+		top: 115px
+
+#enemy
+	width: 50px
+	height: 34px
+	position: absolute
+	top: 150px
+	left: 550px
+
+	// background-color: black
+	background-image: url("img/blue.png")
+	background-repeat: no-repeat
+	background-size: 100%
+
+.move
+	animation: block 1s infinite linear
+
+@keyframes block
+	0%
+		left: 550px
+	100%
+		left: 0px
